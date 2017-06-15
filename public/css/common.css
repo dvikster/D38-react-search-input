@@ -1,53 +1,82 @@
 body{
     background-image: url("../img/bg.jpg");
+    font-family: Verdana, sans-serif;
+    background-size: cover;
 }
-.library-wrapp{
-    max-width:1000px;
-    margin:0 auto;
-    width: 100%;
+/*.wrapper {*/
+    /*display: flex;*/
+/*}*/
+
+/*aside {*/
+    /*width: 200px;*/
+/*}*/
+
+/*aside a.active {*/
+    /*font-weight: bold;*/
+/*}*/
+
+/*.main-container {*/
+    /*flex: 1;*/
+/*}*/
+
+
+.container{
+    margin-top: 50px;
 }
-.book{
-    width: 30%;
-    margin: 1.5%;
+.nav{
+    margin-top: 65px;
+}
+.item
+{
     display: inline-block;
+    width:185px;
     vertical-align: top;
+    margin:10px 20px 20px 0;
+    padding:0;
+    font-size: 14px;
+    line-height: 18px;
 }
-.book img{
-    width:100%;
-    vertical-align: top;
+.item:hover img{
+    border: 1px solid gray;
+    width:185px;
 }
-.bookmas{
-    font-size: 20px;
-    color: green;
+.item div{
+    margin-bottom: 10px;
+}
+.item span.desc{
     font-weight: bold;
-    margin: 1.5%;
+    font-size: 15px;
+}
+.item img{
+    width: 175px;
+    height: auto;
+}
+.item .img-container{
+    height: 290px;
     cursor: pointer;
 }
-.booknone{
-    display: none;
-}
-.none{
-    display: none;
-}
-.readmore, news__big-text{
-    display: block;
-}
-.readmore.none, news__big-text.none{
-    display: none;
+.loading {
+    font-size: 30px;
 }
 
-.wrapper {
-    display: flex;
+.loading:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+    animation: ellipsis steps(4,end) 900ms infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+    width: 0px;
 }
 
-aside {
-    width: 200px;
+@keyframes ellipsis {
+    to {
+        width: 1.25em;
+    }
 }
 
-aside a.active {
-    font-weight: bold;
-}
-
-.main-container {
-    flex: 1;
+@-webkit-keyframes ellipsis {
+    to {
+        width: 1.25em;
+    }
 }

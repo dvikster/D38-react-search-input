@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
+import {FormGroup, FormControl} from 'react-bootstrap';
 
 export default class MVC extends Component{
     //дефолтное состояние инпута
@@ -19,10 +20,10 @@ export default class MVC extends Component{
         ];
         //обработтка вводимого значения в инпут
         let inputValueLet = this.state.inputValue.trim().toLowerCase();
-
+        let mvcLibraryNew = [];
         //фильтрация массива согласно введенного значения (обрабатывае и возвращает массив отфильтрованыx данных)
-        if(inputValueLet.length>0){
-            mvcLibrary = mvcLibrary.filter(function (letters) {
+        if(mvcLibrary.length>0){
+            mvcLibraryNew = mvcLibrary.filter(function (letters) {
                 return letters.mvc.toLowerCase().match( inputValueLet )
             });
         }
@@ -31,19 +32,21 @@ export default class MVC extends Component{
            <div>
                <h1>MVC</h1>
                <form className="form-inline">
-                   <div className="form-group">
-                       <input
+                   {/*<div className="form-group">*/}
+                       <FormGroup>
+                           <FormControl
                            className='form-control'
                            value={this.state.inputValue}
                            onChange={this.onChangeHandler}
                            defaultValue=''
                            placeholder='Get a MVC'
-                       />
-                                  </div>
+                           />
+                       </FormGroup>
+                   {/*</div>*/}
                </form>
                {/*вывод массива изначально всего, а потом с отфильтрованного массива mvcLibrary */}
                <ul>
-                   { mvcLibrary.map(function (letters) {
+                   { mvcLibraryNew.map(function (letters) {
                         return (
                          <li className="mvc_item" key={letters.mvc}>{letters.mvc}</li>
                         )}

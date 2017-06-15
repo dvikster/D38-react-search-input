@@ -9,6 +9,9 @@ import ContentContainer from './components/ContentContainer';
 import Home from './components/Home'
 import ArticlesList from './components/ArticlesList'
 import MVC from './components/MVC'
+import FilmsList from './components/FilmsList'
+import BookStore from './components/BookStore'
+
 
 
 export default (
@@ -32,6 +35,17 @@ export default (
 
             </Route>
 
+            <Route path="films">
+                <Route component={ContentContainer}>
+                    <IndexRoute component={FilmsList} />
+                </Route>
+            </Route>
+
+            <Route path="book-store">
+                <Route component={ContentContainer}>
+                    <IndexRoute component={BookStore} />
+                </Route>
+            </Route>
 
 
         </Route>

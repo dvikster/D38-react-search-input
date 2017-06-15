@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-export default class ArticlesList extends Component{
+export default class BookStore extends Component{
     state ={
         post: [],
         loading: true,
@@ -22,7 +22,7 @@ export default class ArticlesList extends Component{
                     loading: false,
                     error:  err
                 });
-            });
+            })
     }
 
     renderLoading(){
